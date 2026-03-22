@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(where node:*)",
+      "Bash(echo \"PATH: $PATH\")",
+      "Read(//c/Program Files/nodejs//**)",
+      "Read(//c/Users/kianm/AppData/Roaming/**)",
+      "Read(//c/Users/kianm/**)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "WebSearch",
+      "WebFetch(domain:data.gov.sg)",
+      "Bash(node_modules/.bin/tsc -b --noEmit)",
+      "Bash(ls \"/c/Users/kianm/AppData/Roaming/nvm/\"*)",
+      "Read(//c/Program Files/**)",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
