@@ -57,13 +57,12 @@ export function FilterBar({ data, filters, onChange }: FilterBarProps) {
           </label>
           <select
             value={filters.year}
+            className={filters.year !== "all" ? "filter-active" : ""}
             onChange={(e) => update("year", e.target.value)}
           >
             <option value="all">All Years</option>
             {years.map((y) => (
-              <option key={y} value={y}>
-                {y}
-              </option>
+              <option key={y} value={y}>{y}</option>
             ))}
           </select>
         </div>
@@ -74,13 +73,12 @@ export function FilterBar({ data, filters, onChange }: FilterBarProps) {
           </label>
           <select
             value={filters.town}
+            className={filters.town !== "all" ? "filter-active" : ""}
             onChange={(e) => update("town", e.target.value)}
           >
             <option value="all">All Towns</option>
             {towns.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
+              <option key={t} value={t}>{t}</option>
             ))}
           </select>
         </div>
@@ -91,13 +89,12 @@ export function FilterBar({ data, filters, onChange }: FilterBarProps) {
           </label>
           <select
             value={filters.flatType}
+            className={filters.flatType !== "all" ? "filter-active" : ""}
             onChange={(e) => update("flatType", e.target.value)}
           >
             <option value="all">All Types</option>
             {flatTypes.map((f) => (
-              <option key={f} value={f}>
-                {f}
-              </option>
+              <option key={f} value={f}>{f}</option>
             ))}
           </select>
         </div>

@@ -62,6 +62,7 @@ function App() {
       {/* Background loading indicator */}
       {loadingMore && (
         <div className="loading-banner">
+          <div className="loading-banner-dot" />
           <div className="loading-banner-bar">
             <div
               className="loading-banner-fill"
@@ -78,34 +79,34 @@ function App() {
       {/* Filters */}
       <FilterBar data={data} filters={filters} onChange={setFilters} />
 
-      {/* Charts */}
+      {/* Charts — staggered fade-up via CSS animation delays */}
       <section className="dashboard">
-        {/* Heat Map + Listings side-by-side (always visible) */}
-        <div className="map-listings-row has-drill">
+        <div className="map-listings-row has-drill reveal reveal-d1">
           <div className="map-col">
             <HeatMap data={filtered} onTownClick={handleTownClick} />
           </div>
           <div className="drill-col">
-            <DrillDown
-              town={drillTown}
-              data={filtered}
-            />
+            <DrillDown town={drillTown} data={filtered} />
           </div>
         </div>
 
-        <RentDistribution data={filtered} />
+        <div className="reveal reveal-d2">
+          <RentDistribution data={filtered} />
+        </div>
 
-        <div className="chart-row">
+        <div className="chart-row reveal reveal-d3">
           <TownChart data={filtered} onTownClick={handleTownClick} />
           <FlatTypeChart data={filtered} />
         </div>
 
-        <div className="chart-row">
+        <div className="chart-row reveal reveal-d4">
           <TrendChart data={filtered} />
           <TransactionPie data={filtered} />
         </div>
 
-        <YoYChart data={filtered} />
+        <div className="reveal reveal-d5">
+          <YoYChart data={filtered} />
+        </div>
       </section>
 
       {/* Footer */}
@@ -117,9 +118,7 @@ function App() {
           </a>{" "}
           — HDB Renting Out of Flats (Jan 2021 onwards)
         </p>
-        <p className="footer-sub">
-          Built with React, TypeScript &amp; Recharts
-        </p>
+        <p className="footer-sub">Built with React, TypeScript &amp; Recharts</p>
       </footer>
     </div>
   );
